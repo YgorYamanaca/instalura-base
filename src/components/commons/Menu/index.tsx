@@ -29,9 +29,9 @@ const Menu: React.FC = () => {
         <InstaluraLogo />
       </MenuWrapper.LeftSide>
       <MenuWrapper.CentralSide>
-        {links.map((link: ILink): JSX.Element => {
+        {links.map((link: ILink, index: number): JSX.Element => {
           return(
-            <li>
+            <li key={`li-key-${index}`}>
               <a href={link.url}>
                 {link.text}
               </a>
