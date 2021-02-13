@@ -16,7 +16,7 @@ const theme = {
   },
 }
 
-  const App: React.FC<AppProps> = ({ Component, pageProps }) => {
+const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <GlobalStyle />

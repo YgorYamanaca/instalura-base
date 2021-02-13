@@ -1,12 +1,12 @@
 import React from 'react';
-import styled from 'styled-components'
+import Menu from '../src/components/commons/Menu';
 
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
-`
 const Home: React.FC = () => {
-  return <Title>My page</Title>;
+  return (
+    <React.Fragment>
+      <Menu />
+    </React.Fragment>
+  )
 }
 
 
