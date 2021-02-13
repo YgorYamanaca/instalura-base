@@ -38,7 +38,7 @@ MenuWrapper.CentralSide = styled.div`
     text-align: center;
     text-decoration: none;
     color: #88989E;
-    transition: 200ms ease-in-out;
+    transition: opacity ${({ theme }) => theme.transition};
     &:hover,
     &:focus {
       font-weight: 500;

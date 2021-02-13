@@ -1,5 +1,6 @@
 import React from 'react';
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import theme from '../src/components/theme';
 import { AppProps } from 'next/app';
 
 const GlobalStyle = createGlobalStyle`
@@ -10,20 +11,14 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const theme = {
-  colors: {
-    primary: '#0070f3',
-  },
-}
-
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <>
+    <React.Fragment>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
       </ThemeProvider>
-    </>
+    </React.Fragment>
   )
 }
 

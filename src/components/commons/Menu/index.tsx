@@ -1,5 +1,6 @@
 import React from 'react';
 import InstaluraLogo from '../../theme/InstaluraLogo/Instalura';
+import { CustomButton } from '../CustomButton';
 import { MenuWrapper } from './styles/MenuWrapper';
 
 interface ILink {
@@ -39,12 +40,12 @@ const Menu: React.FC = () => {
         )})}
       </MenuWrapper.CentralSide>
       <MenuWrapper.RightSide>
-        <button>
+        <CustomButton ghost variant='secondary.main'>
           Entrar
-        </button>
-        <button>
+        </CustomButton>
+        <CustomButton variant='primary.main'>
           Cadastrar
-        </button>
+        </CustomButton>
       </MenuWrapper.RightSide>
     </MenuWrapper>
   )
