@@ -1,12 +1,12 @@
 import styled, { StyledComponentBase, DefaultTheme } from 'styled-components';
 
-interface IMenuWrapper extends StyledComponentBase<any, DefaultTheme, {}, never> {
+interface IMenuWrapperStyle extends StyledComponentBase<any, DefaultTheme, {}, never> {
   LeftSide?: any,
   CentralSide?: any,
   RightSide?: any,
 }
 
-export const MenuWrapper: IMenuWrapper = styled.nav<IMenuWrapper>`
+export const MenuWrapper: IMenuWrapperStyle = styled.nav<IMenuWrapperStyle>`
   display: flex;
   align-items: center;
   justify-content: space-between;

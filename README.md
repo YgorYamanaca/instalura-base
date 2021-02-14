@@ -1,3 +1,17 @@
-# Instalura desenvolvido durante o Bootcamp
+# Instalura
+Esse projeto foi desenvolvido durante o bootcamp da Alura, utilizando as princípais tecnologias Front-end!
 
-Projeto foi desenvolvido durante o bootcamp da alura, utilizando as princípais tecnologias do mercado!
+----------------------
+
+## Estrutura
+### pages
+As páginas da aplicação
+### src
+- #### assets
+    Logo, Imagens entre outros recursos do Projeto.  
+- #### components
+    Componentes do Projeto.
+- ####  theme
+    Tema do Projeto.
+
+----------------------

@@ -1,11 +1,12 @@
 import React from 'react';
-import InstaluraLogo from '../../../theme/InstaluraLogo/Instalura';
+import InstaluraLogo from '../../../assets/logo/Instalura';
+import Text from '../../foundation/Text';
 import { CustomButton } from '../CustomButton';
 import { MenuWrapper } from './styles/MenuWrapper';
 
 interface ILink {
-  text:string,
-  url:string
+  text: string,
+  url: string
 }
 
 const Menu: React.FC = () => {
@@ -33,9 +34,9 @@ const Menu: React.FC = () => {
         {links.map((link: ILink, index: number): JSX.Element => {
           return(
             <li key={`li-key-${index}`}>
-              <a href={link.url}>
+              <Text variant='smallestException' tag='a' href={link.url}>
                 {link.text}
-              </a>
+              </Text>
             </li>
         )})}
       </MenuWrapper.CentralSide>

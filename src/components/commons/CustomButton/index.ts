@@ -7,13 +7,13 @@ interface ICustomButton{
 }
 
 const ButtonGhost = css<ICustomButton>`
-  color: ${(props) => get(props.theme, `colors.${props.variant}.color`)};
+  color: ${({theme, variant}) => get(theme, `colors.${variant}.color`)};
   background: transparent;
 `;
 
 const ButtonDefault = css<ICustomButton>`
-  background-color: ${(props) => get(props.theme, `colors.${props.variant}.color`)};
-  color: ${(props) => get(props.theme, `colors.${props.variant}.contrastText`)};
+  background-color: ${({theme, variant}) => get(theme, `colors.${variant}.color`)};
+  color: ${({theme, variant}) => get(theme, `colors.${variant}.contrastText`)};
 `;
 
 export const CustomButton = styled.button<ICustomButton>`
