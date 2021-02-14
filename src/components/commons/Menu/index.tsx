@@ -1,5 +1,5 @@
 import React from 'react';
-import InstaluraLogo from '../../theme/InstaluraLogo/Instalura';
+import InstaluraLogo from '../../../theme/InstaluraLogo/Instalura';
 import { CustomButton } from '../CustomButton';
 import { MenuWrapper } from './styles/MenuWrapper';
 

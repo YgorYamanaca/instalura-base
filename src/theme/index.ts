@@ -1,3 +1,5 @@
+import { DefaultTheme } from "styled-components";
+
 const colors = {
   background: {
     light: {
@@ -39,8 +41,11 @@ const colors = {
   },
 };
 
-export default {
+const theme: DefaultTheme = {
   colors,
   borderRadius: '12px',
   transition: '200ms ease-in-out',
+  fontFamily: '\'Rubik\', sans-serif',
 }
+
+export default theme

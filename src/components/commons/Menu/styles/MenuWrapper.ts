@@ -1,6 +1,6 @@
-import styled, { StyledComponentBase } from 'styled-components';
+import styled, { StyledComponentBase, DefaultTheme } from 'styled-components';
 
-interface IMenuWrapper extends StyledComponentBase<any, {}> {
+interface IMenuWrapper extends StyledComponentBase<any, DefaultTheme, {}, never> {
   LeftSide?: any,
   CentralSide?: any,
   RightSide?: any,
