@@ -5,7 +5,7 @@ import IColors from './colors/interface';
 declare module 'styled-components' {
   export interface DefaultTheme {
     readonly colors: IColors,
-    readonly typographyVariants: ITypographyVariants,
+    readonly typography: ITypographyVariants,
     readonly borderRadius: string,
     readonly transition: string,
     readonly fontFamily: string,

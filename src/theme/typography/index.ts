@@ -1,6 +1,6 @@
 import ITypographyVariants from './interface';
 
-export const typographyVariants: ITypographyVariants = {
+export const typography: ITypographyVariants = {
   // [title]
   title: {
     fontSize: '32px',
