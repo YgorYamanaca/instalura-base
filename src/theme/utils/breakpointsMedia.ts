@@ -5,8 +5,8 @@ import { breakpoints } from '../breakpoints';
 export function breakpointsMedia(cssByBreakpoint: {[key: string]: CSSProp}): CSSProp{
   const breakpointNames: string[] = Object.keys(breakpoints);
   return breakpointNames
-    .filter((breakpointName) => Boolean(cssByBreakpoint[breakpointName]))
-    .map((breakpointName: string) => css`
+    .filter((breakpointName): boolean => Boolean(cssByBreakpoint[breakpointName]))
+    .map((breakpointName: string): CSSProp => css`
     @media only screen and (min-width: ${breakpoints[breakpointName]}px) {
       ${cssByBreakpoint[breakpointName]}
     }

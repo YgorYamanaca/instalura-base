@@ -1,4 +1,5 @@
 import React from 'react';
+import AluraLogo from '../../../assets/logo/AluroLogo';
 import Text from '../../foundation/Text';
 import { FooterWrapper } from './styles';
 
@@ -6,7 +7,7 @@ const Footer: React.FC = () => {
   return (
     <FooterWrapper>
       <a href="https://www.alura.com.br/">
-        <img src="https://www.alura.com.br/assets/img/alura-logo.svg" alt="Logo Alura" />
+        <AluraLogo />
       </a>
       <Text variant='paragraph2' tag='p'>
         Orgulhosamente criado durante
