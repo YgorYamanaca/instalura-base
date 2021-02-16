@@ -2,7 +2,7 @@ import React from 'react';
 import InstaluraLogo from '../../../assets/logo/Instalura';
 import Text from '../../foundation/Text';
 import { CustomButton } from '../CustomButton';
-import { MenuWrapper } from './styles/MenuWrapper';
+import { MenuWrapper } from './styles';
 
 interface ILink {
   text: string,

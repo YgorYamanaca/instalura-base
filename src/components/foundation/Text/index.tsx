@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
-import { TextBase } from './styles/TextBase';
+import { TextBase } from './styles';
 
 interface ITextProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p' | 'li' | 'a' | 'span',
-  variant?: 'paragraph1' | 'smallestException',
+  variant?: 'paragraph1' | 'paragraph2' | 'smallestException',
   children: ReactNode;
   
   href?: string;

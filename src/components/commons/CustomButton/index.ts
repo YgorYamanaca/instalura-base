@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 import get from 'lodash/get';
+import TextStyleVariantsMap from "../../foundation/Text/styles/TextStyleVariantsMap";
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 
 interface ICustomButton{
   readonly ghost?: boolean;
@@ -20,14 +22,26 @@ export const CustomButton = styled.button<ICustomButton>`
   border: 0;
   cursor: pointer;
   padding: 12px 26px;
-  font-weight: bold;
   opacity: 1;
   transition: opacity ${({ theme }) => theme.transition};
   border-radius: ${({ theme }) => theme.borderRadius};
+
+  ${breakpointsMedia({
+    xs: css`
+      ${TextStyleVariantsMap.smallestException}
+      font-weight:500;
+    `,
+    md: css`
+      padding: 12px 43px;
+      ${TextStyleVariantsMap.paragraph1}
+      font-weight:500;
+    `,
+  })}
+
   &:hover,
   &:focus {
     opacity: .5;
   }
-  
+
   ${({ ghost }) => ghost? ButtonGhost : ButtonDefault};
 `;
