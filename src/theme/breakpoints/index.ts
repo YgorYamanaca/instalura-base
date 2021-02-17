@@ -1,8 +1,4 @@
-interface IBreakpointsObject {
-  [xs: string]: number,
-}
-
-export default interface IBreakpoints extends IBreakpointsObject {
+export default interface IBreakpoints{
   xs: number,
   sm: number,
   md: number,

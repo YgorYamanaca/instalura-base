@@ -1,11 +1,14 @@
-import React, { ReactNode } from 'react';
+import React, {  ReactNode } from 'react';
+import IBreakpoints from '../../../theme/breakpoints';
+import ITypographyVariants from '../../../theme/typography';
 import { TextBase } from './styles';
 
 interface ITextProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p' | 'li' | 'a' | 'span',
-  variant?: 'paragraph1' | 'paragraph2' | 'smallestException',
+  variant?: keyof ITypographyVariants,
   children: ReactNode;
-  
+  color?: string;
+  textAlign?: string | {[key in keyof IBreakpoints]?: string };
   href?: string;
 }
 

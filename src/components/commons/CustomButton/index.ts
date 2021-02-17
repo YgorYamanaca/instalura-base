@@ -2,10 +2,14 @@ import styled, { css } from "styled-components";
 import get from 'lodash/get';
 import TextStyleVariantsMap from "../../foundation/Text/styles/TextStyleVariantsMap";
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
+import IBreakpoints from "../../../theme/breakpoints";
+import { propToStyle } from "../../../theme/utils/propToStyle";
 
 interface ICustomButton{
   readonly ghost?: boolean;
   readonly variant?: string;
+  readonly margin?: {[key in keyof IBreakpoints]?: string};
+  readonly display?: string;
 }
 
 const ButtonGhost = css<ICustomButton>`
@@ -37,6 +41,9 @@ export const CustomButton = styled.button<ICustomButton>`
       font-weight:500;
     `,
   })}
+
+  ${propToStyle('margin')}
+  ${propToStyle('display')}
 
   &:hover,
   &:focus {

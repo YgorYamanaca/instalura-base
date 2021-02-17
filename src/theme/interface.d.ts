@@ -1,7 +1,7 @@
 import 'styled-components';
-import ITypographyVariants from './typography/interface';
-import IColors from './colors/interface';
-import IBreakpoints from './breakpoints/interface';
+import ITypographyVariants from './typography';
+import IColors from './colors';
+import IBreakpoints from './breakpoints';
 
 declare module 'styled-components' {
   export interface DefaultTheme {

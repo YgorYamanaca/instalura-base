@@ -1,12 +1,12 @@
 import { css } from 'styled-components';
 import { CSSProp } from 'styled-components';
-import { breakpoints } from '../breakpoints';
+import IBreakpoints, { breakpoints } from '../breakpoints';
 
-export function breakpointsMedia(cssByBreakpoint: {[key: string]: CSSProp}): CSSProp{
-  const breakpointNames: string[] = Object.keys(breakpoints);
+export function breakpointsMedia(cssByBreakpoint: {[key in keyof IBreakpoints]?: CSSProp}): CSSProp{
+  const breakpointNames: (keyof IBreakpoints)[] = Object.keys(breakpoints) as Array<keyof IBreakpoints>;
   return breakpointNames
     .filter((breakpointName): boolean => Boolean(cssByBreakpoint[breakpointName]))
-    .map((breakpointName: string): CSSProp => css`
+    .map((breakpointName): CSSProp => css`
     @media only screen and (min-width: ${breakpoints[breakpointName]}px) {
       ${cssByBreakpoint[breakpointName]}
     }

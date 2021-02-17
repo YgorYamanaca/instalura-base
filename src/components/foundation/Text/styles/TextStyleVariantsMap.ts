@@ -1,10 +1,29 @@
 import { css, CSSProp } from 'styled-components';
+import ITypographyVariants from '../../../../theme/typography';
+import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
 
-interface ITextStyleVariantsMap {
-  readonly [key: string]: CSSProp,
+type ITextStyleVariantsMap = {
+  [key in keyof ITypographyVariants]?: CSSProp
 }
 
 const TextStyleVariantsMap: ITextStyleVariantsMap = {
+  title: css`
+    ${({ theme }) => css`
+      font-size: ${theme.typography.titleXS.fontSize};
+      font-weight: ${theme.typography.titleXS.fontWeight};
+      line-height: ${theme.typography.titleXS.lineHeight};
+    `}
+    ${breakpointsMedia({
+      md: css`
+        ${({ theme }) => css`
+          font-size: ${theme.typography.title.fontSize};
+          font-weight: ${theme.typography.title.fontWeight};
+          line-height: ${theme.typography.title.lineHeight};
+        `}
+      `,
+    })}
+  `,
+
   paragraph1: css`
     font-size: ${({ theme }) => theme.typography.paragraph1.fontSize};
     font-weight: ${({ theme }) => theme.typography.paragraph1.fontWeight};
