@@ -78,6 +78,7 @@ const Home: React.FC = () => (
           <img
             style={{ display: 'block', margin: 'auto' }}
             src="https://bootcamp-alura-01-git-modulo01.omariosouto.vercel.app/images/phones.png"
+            alt="Alternative Image"
           />
         </Grid.Col>
       </Grid.Row>
