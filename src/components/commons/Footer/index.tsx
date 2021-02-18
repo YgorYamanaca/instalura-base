@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       <a href="https://www.alura.com.br/">
         <AluraLogo />
       </a>
-      <Text variant='paragraph2' tag='p'>
+      <Text variant='paragraph2' tag='p' margin={{xs:'0', md:'0'}}>
         Orgulhosamente criado durante
         {' '}
         o

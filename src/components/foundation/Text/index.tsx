@@ -1,14 +1,17 @@
 import React, {  ReactNode } from 'react';
+import { CSSProperties } from 'styled-components';
 import IBreakpoints from '../../../theme/breakpoints';
 import ITypographyVariants from '../../../theme/typography';
 import { TextBase } from './styles';
 
-interface ITextProps {
+type CSSPropsMap = {
+  [cssKey in keyof CSSProperties]?: CSSProperties[cssKey] | {[key in keyof IBreakpoints]?: CSSProperties[cssKey]};
+}
+interface ITextProps extends CSSPropsMap {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p' | 'li' | 'a' | 'span',
   variant?: keyof ITypographyVariants,
   children: ReactNode;
   color?: string;
-  textAlign?: string | {[key in keyof IBreakpoints]?: string };
   href?: string;
 }
 

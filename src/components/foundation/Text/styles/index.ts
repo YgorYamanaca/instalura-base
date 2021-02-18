@@ -12,4 +12,5 @@ export const TextBase = styled.span<ITextBaseStyle>`
   ${({ variant }) => TextStyleVariantsMap[variant]};
   color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
   ${propToStyle('textAlign')}
+  ${propToStyle('margin')}
 `;
