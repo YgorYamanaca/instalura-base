@@ -1,14 +1,18 @@
 import styled, { css, CSSProperties } from 'styled-components';
 import IBreakpoints from '../../../theme/breakpoints';
-import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 import { propToStyle } from '../../../theme/utils/propToStyle';
 
 type CSSPropsMap = {
-  [cssKey in keyof CSSProperties]?: CSSProperties[cssKey] | {[key in keyof IBreakpoints]?: CSSProperties[cssKey]};
+  [cssKey in keyof CSSProperties]?: CSSProperties[cssKey] |
+  // eslint-disable-next-line no-unused-vars
+  {[key in keyof IBreakpoints]?: CSSProperties[cssKey]};
 }
 
 interface IGridProps extends CSSPropsMap {
+  // eslint-disable-next-line no-unused-vars
   value?: number | {[key in keyof IBreakpoints]?: number},
+  // eslint-disable-next-line no-unused-vars
   offset?: number | {[key in keyof IBreakpoints]?: number}
 }
 
@@ -19,29 +23,29 @@ const Container = styled.div<IGridProps>`
   margin-right: auto;
   margin-left: auto;
   ${breakpointsMedia({
-  xs: css`
+    xs: css`
     max-width: initial;
     padding-right: 28px;
     padding-left: 28px;
   `,
-  sm: css`
+    sm: css`
     max-width: 576px; 
   `,
-  md: css`
+    md: css`
     max-width: 768px;
     padding-right: 16px;
     padding-left: 16px; 
   `,
-  lg: css`
+    lg: css`
     max-width: 1160px; 
   `,
-  xl: css`
+    xl: css`
     max-width: 1222px;
   `,
   })}
   
   ${propToStyle('marginTop')};
-`
+`;
 
 const Row = styled.div`
   display: flex;
@@ -63,48 +67,48 @@ const Col = styled.div<IGridProps>`
       max-width: ${(100 * value) / 12}%;
     `;
     }
-  return breakpointsMedia({
-    xs: value?.xs
-      ? css`
+    return breakpointsMedia({
+      xs: value?.xs
+        ? css`
         flex-grow: 0;
         flex-shrink: 0;
         flex-basis: ${(100 * value.xs) / 12}%;
         max-width: ${(100 * value.xs) / 12}%;
       `
-      : '',
-    sm: value?.sm
-      ? css`
+        : '',
+      sm: value?.sm
+        ? css`
         flex-grow: 0;
         flex-shrink: 0;
         flex-basis: ${(100 * value.sm) / 12}%;
         max-width: ${(100 * value.sm) / 12}%;
       `
-      : '',
-    md: value?.md
-      ? css`
+        : '',
+      md: value?.md
+        ? css`
         flex-grow: 0;
         flex-shrink: 0;
         flex-basis: ${(100 * value.md) / 12}%;
         max-width: ${(100 * value.md) / 12}%;
       `
-      : '',
-    lg: value?.lg
-      ? css`
+        : '',
+      lg: value?.lg
+        ? css`
         flex-grow: 0;
         flex-shrink: 0;
         flex-basis: ${(100 * value.lg) / 12}%;
         max-width: ${(100 * value.lg) / 12}%;
       `
-      : '',
-    xl: value?.xl
-      ? css`
+        : '',
+      xl: value?.xl
+        ? css`
         flex-grow: 0;
         flex-shrink: 0;
         flex-basis: ${(100 * value.xl) / 12}%;
         max-width: ${(100 * value.xl) / 12}%;
       `
-      : '',
-  });
+        : '',
+    });
   }}
 
   ${({ offset }) => {
@@ -147,8 +151,10 @@ const Col = styled.div<IGridProps>`
   ${propToStyle('flexDirection')}
 `;
 
-export const Grid = {
+const Grid = {
   Container,
   Row,
   Col,
 };
+
+export default Grid;

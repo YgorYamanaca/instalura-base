@@ -11,6 +11,7 @@ export default interface ITypographyVariants {
   paragraph1: ITypograph,
   paragraph2: ITypograph,
   smallestException: ITypograph,
+// eslint-disable-next-line semi
 }
 
 export const typography: ITypographyVariants = {

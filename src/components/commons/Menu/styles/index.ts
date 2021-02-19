@@ -1,5 +1,5 @@
 import styled, { StyledComponentBase, DefaultTheme, css } from 'styled-components';
-import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
+import breakpointsMedia from '../../../../theme/utils/breakpointsMedia';
 import TextStyleVariantsMap from '../../../foundation/Text/styles/TextStyleVariantsMap';
 
 interface IMenuWrapperStyle extends StyledComponentBase<any, DefaultTheme, {}, never> {
@@ -8,7 +8,7 @@ interface IMenuWrapperStyle extends StyledComponentBase<any, DefaultTheme, {}, n
   RightSide?: any,
 }
 
-export const MenuWrapper: IMenuWrapperStyle = styled.nav<IMenuWrapperStyle>`
+const MenuWrapper: IMenuWrapperStyle = styled.nav<IMenuWrapperStyle>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -80,19 +80,20 @@ MenuWrapper.CentralSide = styled.div`
     text-decoration: none;
     color: #88989E;
     transition: opacity ${({ theme }) => theme.transition};
-    ${breakpointsMedia({
-      xs: css`
-          ${TextStyleVariantsMap.smallestException}
-      `,
-      md: css`
-        ${TextStyleVariantsMap.paragraph1}
-      `,
-    })}
     &:hover,
     &:focus {
       font-weight: 500;
       color: #070C0E;
     }
+
+    ${breakpointsMedia({
+    xs: css`
+              ${TextStyleVariantsMap.smallestException}
+          `,
+    md: css`
+            ${TextStyleVariantsMap.paragraph1}
+          `,
+  })}
   }
 `;
 
@@ -109,3 +110,5 @@ MenuWrapper.RightSide = styled.div`
     `,
   })}
 `;
+
+export default MenuWrapper;

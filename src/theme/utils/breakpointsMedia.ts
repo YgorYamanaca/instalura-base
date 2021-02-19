@@ -1,8 +1,9 @@
-import { css } from 'styled-components';
-import { CSSProp } from 'styled-components';
+import { css, CSSProp } from 'styled-components';
 import IBreakpoints, { breakpoints } from '../breakpoints';
 
-export function breakpointsMedia(cssByBreakpoint: {[key in keyof IBreakpoints]?: CSSProp}): CSSProp{
+// eslint-disable-next-line no-unused-vars
+function breakpointsMedia(cssByBreakpoint: {[key in keyof IBreakpoints]?: CSSProp}): CSSProp {
+  // eslint-disable-next-line max-len
   const breakpointNames: (keyof IBreakpoints)[] = Object.keys(breakpoints) as Array<keyof IBreakpoints>;
   return breakpointNames
     .filter((breakpointName): boolean => Boolean(cssByBreakpoint[breakpointName]))
@@ -12,3 +13,5 @@ export function breakpointsMedia(cssByBreakpoint: {[key in keyof IBreakpoints]?:
     }
   `);
 }
+
+export default breakpointsMedia;

@@ -4,6 +4,7 @@ export default interface IBreakpoints{
   md: number,
   lg: number,
   xl: number,
+// eslint-disable-next-line semi
 }
 
 export const breakpoints: IBreakpoints = {
@@ -12,4 +13,4 @@ export const breakpoints: IBreakpoints = {
   md: 768,
   lg: 992,
   xl: 1200,
-}
+};

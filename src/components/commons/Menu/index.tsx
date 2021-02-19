@@ -1,8 +1,8 @@
 import React from 'react';
 import InstaluraLogo from '../../../assets/logo/Instalura';
 import Text from '../../foundation/Text';
-import { CustomButton } from '../CustomButton';
-import { MenuWrapper } from './styles';
+import CustomButton from '../CustomButton';
+import MenuWrapper from './styles';
 
 interface ILink {
   text: string,
@@ -23,7 +23,7 @@ const Menu: React.FC = () => {
       text: 'Sobre',
       url: '/sobre',
     },
-  ]
+  ];
 
   return (
     <MenuWrapper>
@@ -31,25 +31,24 @@ const Menu: React.FC = () => {
         <InstaluraLogo />
       </MenuWrapper.LeftSide>
       <MenuWrapper.CentralSide>
-        {links.map((link: ILink, index: number): JSX.Element => {
-          return(
-            <li key={`li-key-${index}`}>
-              <Text variant='smallestException' tag='a' href={link.url}>
-                {link.text}
-              </Text>
-            </li>
-        )})}
+        {links.map((link: ILink): JSX.Element => (
+          <li key={`li-key-${link.text}`}>
+            <Text variant="smallestException" tag="a" href={link.url}>
+              {link.text}
+            </Text>
+          </li>
+        ))}
       </MenuWrapper.CentralSide>
       <MenuWrapper.RightSide>
-        <CustomButton ghost variant='secondary.main'>
+        <CustomButton ghost variant="secondary.main">
           Entrar
         </CustomButton>
-        <CustomButton variant='primary.main'>
+        <CustomButton variant="primary.main">
           Cadastrar
         </CustomButton>
       </MenuWrapper.RightSide>
     </MenuWrapper>
-  )
-}
+  );
+};
 
 export default Menu;

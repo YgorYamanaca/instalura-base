@@ -1,8 +1,9 @@
 import { css, CSSProp } from 'styled-components';
 import ITypographyVariants from '../../../../theme/typography';
-import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
+import breakpointsMedia from '../../../../theme/utils/breakpointsMedia';
 
 type ITextStyleVariantsMap = {
+  // eslint-disable-next-line no-unused-vars
   [key in keyof ITypographyVariants]?: CSSProp
 }
 
@@ -14,14 +15,14 @@ const TextStyleVariantsMap: ITextStyleVariantsMap = {
       line-height: ${theme.typography.titleXS.lineHeight};
     `}
     ${breakpointsMedia({
-      md: css`
+    md: css`
         ${({ theme }) => css`
           font-size: ${theme.typography.title.fontSize};
           font-weight: ${theme.typography.title.fontWeight};
           line-height: ${theme.typography.title.lineHeight};
         `}
       `,
-    })}
+  })}
   `,
 
   paragraph1: css`
@@ -35,12 +36,12 @@ const TextStyleVariantsMap: ITextStyleVariantsMap = {
     font-weight: ${({ theme }) => theme.typography.paragraph2.fontWeight};
     line-height: ${({ theme }) => theme.typography.paragraph2.lineHeight};
   `,
-  
+
   smallestException: css`
     font-size: ${({ theme }) => theme.typography.smallestException.fontSize};
     font-weight: ${({ theme }) => theme.typography.smallestException.fontWeight};
     line-height: ${({ theme }) => theme.typography.smallestException.lineHeight};
   `,
-}
+};
 
 export default TextStyleVariantsMap;

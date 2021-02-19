@@ -21,5 +21,31 @@
     ],
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+        "no-use-before-define": ["error", { "variables": false }],
+        "react/prop-types": 0,
+        "react/require-default-props":0,
+        "import/no-unresolved": [
+          2, 
+          { "caseSensitive": false }
+       ],
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "ts": "never",
+            "tsx": "never"
+          }
+       ]
+    },
+    "globals": {
+      "React": true,
+      "JSX": true
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [".ts", ".tsx"]
+        }
+      }
     }
 }

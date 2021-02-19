@@ -1,5 +1,5 @@
 import React from 'react';
-import { CustomButton } from '../src/components/commons/CustomButton';
+import CustomButton from '../src/components/commons/CustomButton';
 import Footer from '../src/components/commons/Footer';
 import Menu from '../src/components/commons/Menu';
 import Text from '../src/components/foundation/Text';
@@ -75,7 +75,7 @@ const Home: React.FC = () => (
         <Grid.Col
           value={{ xs: 12, md: 6 }}
         >
-          <img
+          <image
             style={{ display: 'block', margin: 'auto' }}
             src="https://bootcamp-alura-01-git-modulo01.omariosouto.vercel.app/images/phones.png"
             alt="Alternative Image"

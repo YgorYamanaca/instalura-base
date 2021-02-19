@@ -1,28 +1,29 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 import get from 'lodash/get';
-import TextStyleVariantsMap from "../../foundation/Text/styles/TextStyleVariantsMap";
-import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
-import IBreakpoints from "../../../theme/breakpoints";
-import { propToStyle } from "../../../theme/utils/propToStyle";
+import TextStyleVariantsMap from '../../foundation/Text/styles/TextStyleVariantsMap';
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import IBreakpoints from '../../../theme/breakpoints';
+import { propToStyle } from '../../../theme/utils/propToStyle';
 
-interface ICustomButton{
-  readonly ghost?: boolean;
-  readonly variant?: string;
+interface ICustomButton {
+  // eslint-disable-next-line no-unused-vars
   readonly margin?: {[key in keyof IBreakpoints]?: string};
   readonly display?: string;
+  readonly ghost?: boolean;
+  readonly variant?: string;
 }
 
 const ButtonGhost = css<ICustomButton>`
-  color: ${({theme, variant}) => get(theme, `colors.${variant}.color`)};
+  color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
   background: transparent;
 `;
 
 const ButtonDefault = css<ICustomButton>`
-  background-color: ${({theme, variant}) => get(theme, `colors.${variant}.color`)};
-  color: ${({theme, variant}) => get(theme, `colors.${variant}.contrastText`)};
+  background-color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
+  color: ${({ theme, variant }) => get(theme, `colors.${variant}.contrastText`)};
 `;
 
-export const CustomButton = styled.button<ICustomButton>`
+const CustomButton = styled.button<ICustomButton>`
   border: 0;
   cursor: pointer;
   padding: 12px 26px;
@@ -50,5 +51,7 @@ export const CustomButton = styled.button<ICustomButton>`
     opacity: .5;
   }
 
-  ${({ ghost }) => ghost? ButtonGhost : ButtonDefault};
+  ${({ ghost }) => (ghost ? ButtonGhost : ButtonDefault)};
 `;
+
+export default CustomButton;

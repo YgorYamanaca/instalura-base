@@ -18,8 +18,8 @@ export default interface IColors {
   }
   background: IColor
   borders: IColor
+// eslint-disable-next-line semi
 }
-
 
 export const colors: IColors = {
   background: {

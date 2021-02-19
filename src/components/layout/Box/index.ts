@@ -5,7 +5,7 @@ type IBoxProps = {
   [cssKey in keyof CSSProperties]?: CSSProperties[cssKey]
 }
 
-export const Box = styled.div<IBoxProps>`
+const Box = styled.div<IBoxProps>`
   ${propToStyle('flex')}
   ${propToStyle('display')}
   ${propToStyle('flexDirection')}
@@ -15,3 +15,5 @@ export const Box = styled.div<IBoxProps>`
   ${propToStyle('backgroundRepeat')}
   ${propToStyle('backgroundPosition')}
 `;
+
+export default Box;
