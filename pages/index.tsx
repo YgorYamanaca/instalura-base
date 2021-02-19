@@ -3,8 +3,8 @@ import CustomButton from '../src/components/commons/CustomButton';
 import Footer from '../src/components/commons/Footer';
 import Menu from '../src/components/commons/Menu';
 import Text from '../src/components/foundation/Text';
-import { Grid } from '../src/components/layout/Grid';
-import { Box } from '../src/components/layout/Box';
+import Grid from '../src/components/layout/Grid';
+import Box from '../src/components/layout/Box';
 
 const Home: React.FC = () => (
   <Box
@@ -75,10 +75,11 @@ const Home: React.FC = () => (
         <Grid.Col
           value={{ xs: 12, md: 6 }}
         >
-          <image
+          <img
             style={{ display: 'block', margin: 'auto' }}
+            aria-hidden
             src="https://bootcamp-alura-01-git-modulo01.omariosouto.vercel.app/images/phones.png"
-            alt="Alternative Image"
+            alt="Image of cell."
           />
         </Grid.Col>
       </Grid.Row>

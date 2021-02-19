@@ -20,10 +20,13 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
-        "no-use-before-define": ["error", { "variables": false }],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "react/react-in-jsx-scope": "off",
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": "error",
         "react/prop-types": 0,
         "react/require-default-props":0,
+        "react/jsx-props-no-spreading": "off",
         "import/no-unresolved": [
           2, 
           { "caseSensitive": false }
@@ -44,7 +47,7 @@
     "settings": {
       "import/resolver": {
         "node": {
-          "extensions": [".ts", ".tsx"]
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
         }
       }
     }
