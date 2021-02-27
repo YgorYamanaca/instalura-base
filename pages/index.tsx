@@ -36,6 +36,7 @@ const Home: React.FC = () => {
           </Box>
         )}
       </Modal>
+
       <Menu />
       <Grid.Container
         marginTop={{

@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 import ModalWrapper from './styles';
 
 type IModal = {
@@ -16,9 +17,32 @@ const Modal: React.FC<IModal> = ({ isOpen, onClose, children }) => (
       return !isSafeArea && onClose();
     }}
   >
-    {children({
-      'data-modal-safe-area': 'true',
-    })}
+    <motion.div
+      variants={{
+        open: {
+          x: 0,
+          scale: 1,
+          rotate: 360,
+        },
+        closed: {
+          scale: 0,
+          rotate: 90,
+        },
+      }}
+      animate={isOpen ? 'open' : 'closed'}
+      transition={{
+        duration: 0.5,
+      }}
+      style={{
+        display: 'flex',
+        margin: 'auto',
+      }}
+    >
+      {children({
+        'data-modal-safe-area': 'true',
+      })}
+
+    </motion.div>
   </ModalWrapper>
 );
 
