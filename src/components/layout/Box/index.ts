@@ -14,6 +14,7 @@ const Box = styled.div<IBoxProps>`
   ${propToStyle('backgroundImage')}
   ${propToStyle('backgroundRepeat')}
   ${propToStyle('backgroundPosition')}
+  ${propToStyle('backgroundColor')}
 `;
 
 export default Box;
