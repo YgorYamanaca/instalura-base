@@ -11,6 +11,7 @@ interface ICustomButton {
   readonly display?: string;
   readonly ghost?: boolean;
   readonly variant?: string;
+  readonly fullWidth?: boolean;
 }
 
 const ButtonGhost = css<ICustomButton>`
@@ -46,12 +47,20 @@ const CustomButton = styled.button<ICustomButton>`
   ${propToStyle('margin')}
   ${propToStyle('display')}
 
-  &:hover,
-  &:focus {
+  &:hover {
     opacity: .5;
   }
-
+  
+  outline: none;
   ${({ ghost }) => (ghost ? ButtonGhost : ButtonDefault)};
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .2;
+  }
+  ${({ fullWidth }) => fullWidth && css`
+    width: 100%;
+  `};
 `;
 
 export default CustomButton;

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ChangeEvent, ReactNode } from 'react';
 import { CSSProperties } from 'styled-components';
 import IBreakpoints from '../../../theme/breakpoints';
 import ITypographyVariants from '../../../theme/typography';
@@ -7,14 +7,19 @@ import TextBase from './styles';
 type CSSPropsMap = {
   [cssKey in keyof CSSProperties]?: CSSProperties[cssKey] |
   // eslint-disable-next-line no-unused-vars
-  {[key in keyof IBreakpoints]?: CSSProperties[cssKey]};
+  {[key in keyof IBreakpoints]?: CSSProperties[cssKey]}
 };
 interface ITextProps extends CSSPropsMap {
-  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p' | 'li' | 'a' | 'span',
+  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p' | 'li' | 'a' | 'span' | 'input',
   variant?: keyof ITypographyVariants,
-  children: ReactNode;
+  children?: ReactNode;
   color?: string;
   href?: string;
+  type?: string;
+  placeholder?: string;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  name?: string;
+  value?: string;
 }
 
 const Text: React.FC<ITextProps> = ({

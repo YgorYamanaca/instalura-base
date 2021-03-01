@@ -47,11 +47,16 @@ const Container = styled.div<IGridProps>`
   ${propToStyle('marginTop')};
 `;
 
-const Row = styled.div`
+const Row = styled.div<IGridProps>`
   display: flex;
   flex-wrap: wrap;
   margin-right: -16px;
   margin-left: -16px;
+
+  ${propToStyle('flex')}
+  ${propToStyle('marginLeft')}
+  ${propToStyle('marginRight')}
+  ${propToStyle('justifyContent')}
 `;
 
 const Col = styled.div<IGridProps>`
@@ -149,6 +154,7 @@ const Col = styled.div<IGridProps>`
   ${propToStyle('alignItems')}
   ${propToStyle('justifyContent')}
   ${propToStyle('flexDirection')}
+  ${propToStyle('paddingRight')}
 `;
 
 const Grid = {
