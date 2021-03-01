@@ -22,6 +22,7 @@ const Container = styled.div<IBoxProps>`
   ${propToStyle('padding')}
   ${propToStyle('position')}
   ${propToStyle('maxWidth')}
+  ${propToStyle('alignSelf')}
 `;
 
 const OverFlow = styled.div<IBoxProps>`

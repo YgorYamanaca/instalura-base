@@ -157,6 +157,7 @@ const SubscribeForm: React.FC<ISubscribeForm> = ({ modalProps, onCloseAction }) 
       paddingRight={{ md: '0' }}
       flex={1}
       value={{ xs: 12, md: 5, lg: 4 }}
+      justifyContent="flex-end"
     >
       <Box.Container
         boxShadow="-10px 0px 24px rgba(7, 12, 14, 0.1)"
