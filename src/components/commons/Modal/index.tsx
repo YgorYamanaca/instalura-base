@@ -22,11 +22,9 @@ const Modal: React.FC<IModal> = ({ isOpen, onClose, children }) => (
         open: {
           x: 0,
           scale: 1,
-          rotate: 360,
         },
         closed: {
-          scale: 0,
-          rotate: 90,
+          scale: 2,
         },
       }}
       animate={isOpen ? 'open' : 'closed'}
@@ -35,13 +33,12 @@ const Modal: React.FC<IModal> = ({ isOpen, onClose, children }) => (
       }}
       style={{
         display: 'flex',
-        margin: 'auto',
+        flex: 1,
       }}
     >
       {children({
         'data-modal-safe-area': 'true',
       })}
-
     </motion.div>
   </ModalWrapper>
 );

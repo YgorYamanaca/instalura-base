@@ -6,12 +6,13 @@ import Text from '../src/components/foundation/Text';
 import Grid from '../src/components/layout/Grid';
 import Box from '../src/components/layout/Box';
 import Modal from '../src/components/commons/Modal';
+import SubscribeForm from '../src/components/patterns/SubscribeForm';
 
 const Home: React.FC = () => {
-  const [isModalOpen, setModal] = useState<boolean>(false);
+  const [isModalOpen, setModal] = useState<boolean>(true);
 
   return (
-    <Box
+    <Box.Container
       flex="1"
       display="flex"
       flexWrap="wrap"
@@ -26,14 +27,7 @@ const Home: React.FC = () => {
         onClose={() => setModal(false)}
       >
         {(props: object) => (
-          <Box
-            backgroundColor="#fff"
-            {...props}
-          >
-            <div>
-              Conteúdo do Modal
-            </div>
-          </Box>
+          <SubscribeForm modalProps={props} onCloseAction={setModal} />
         )}
       </Modal>
 
@@ -52,9 +46,6 @@ const Home: React.FC = () => {
             alignItems="flex-start"
             justifyContent="center"
             flexDirection="column"
-            onClick={() => {
-              setModal(!isModalOpen);
-            }}
           >
             <Text
               variant="title"
@@ -90,6 +81,9 @@ const Home: React.FC = () => {
                 md: 'initial',
               }}
               display="block"
+              onClick={() => {
+                setModal(!isModalOpen);
+              }}
             >
               Cadastrar
             </CustomButton>
@@ -108,7 +102,7 @@ const Home: React.FC = () => {
         </Grid.Row>
       </Grid.Container>
       <Footer />
-    </Box>
+    </Box.Container>
   );
 };
 

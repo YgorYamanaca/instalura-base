@@ -4,7 +4,7 @@ import ITypographyVariants from '../../../../theme/typography';
 import { propToStyle } from '../../../../theme/utils/propToStyle';
 import TextStyleVariantsMap from './TextStyleVariantsMap';
 
-interface ITextBaseStyle{
+interface ITextBaseStyle {
   readonly variant: keyof ITypographyVariants,
 }
 
