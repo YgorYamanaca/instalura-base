@@ -5,7 +5,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint --ignore-path .gitignore . --ext .tsx,.ts"
   },
   "dependencies": {
     "@crello/react-lottie": "0.0.11",
